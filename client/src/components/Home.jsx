@@ -54,7 +54,7 @@ useEffect(() => {
 
 return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Home</h1>
+      <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Home</h1>
       
       <div className="flex flex-col md:flex-row items-center gap-4">
         <div className="w-full md:w-1/2">
@@ -63,25 +63,25 @@ return (
             placeholder="add" 
             value={newNote}
             onChange={(e)=> setNewNote(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400"
           />
         </div>
         
         <div className="w-full md:w-1/2">
-          <button className="w-full md:w-auto px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors " onClick={() => addNote(newNote)}>Add</button>
+          <button className="w-full md:w-auto px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 transition-colors " onClick={() => addNote(newNote)}>Add</button>
         </div>
       </div>
 
-      <h1 className="text-2xl font-bold mt-6 mb-4">Notes</h1>
+      <h1 className="text-2xl font-bold mt-6 mb-4 text-gray-900 dark:text-white">Notes</h1>
       <div className="space-y-2">
         {notes.map((note) => (
           <div
             key={note._id || note.id} // depends on backend
-            className="p-3 bg-slate-300 rounded-md"
+            className="p-3 bg-slate-300 dark:bg-gray-700 rounded-md text-gray-900 dark:text-white"
           >
             {note.note}
             <button 
-              className="ml-4 px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors"
+              className="ml-4 px-2 py-1 bg-red-500 text-white rounded-md hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 transition-colors"
               onClick={() => deleteNote(note._id || note.id)}
             >
               Delete
